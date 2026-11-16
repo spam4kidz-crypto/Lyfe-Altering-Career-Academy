@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lyfe Altering Career | L.A.C. Academy</title>
+  <style>
+    :root {
+      --bg-dark: #111111;
+      --bg-card: #1b1b1b;
+      --bg-card-hover: #232323;
+      --copper: #c47245;
+      --copper-hover: #d88354;
+      --tan: #c8a27a;
+      --text-light: #f2f2f2;
+      --text-muted: #b0b0b0;
+      --border-color: #2f2f2f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    header {
+      background-color: #0a0a0a;
+      border-bottom: 2px solid var(--copper);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .brand-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--tan);
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .brand-name span {
+      color: var(--copper);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.35rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--copper);
+    }
+
+    .nav-cta {
+      background-color: var(--copper);
+      color: #fff !important;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+
+    .nav-cta:hover {
+      background-color: var(--copper-hover);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3.5rem 1.5rem 4rem;
+      background: radial-gradient(circle at center, #221c18 0%, #111111 75%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-logo {
+      max-width: 680px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85);
+      border: 1px solid #333;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      color: var(--tan);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.8rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-primary {
+      background-color: var(--copper);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--copper-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--tan);
+      border: 2px solid var(--tan);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--tan);
+      color: #111111;
+    }
+
+    /* Layout & Sections */
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--tan);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+
+    /* Grid & Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--copper);
+      border-radius: 6px;
+      padding: 2rem;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .card:hover {
+      background-color: var(--bg-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      color: var(--tan);
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Badges & Lists */
+    .badge {
+      display: inline-block;
+      background-color: rgba(196, 114, 69, 0.18);
+      color: var(--copper);
+      border: 1px solid var(--copper);
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .check-list li {
+      padding: 0.45rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--text-light);
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--copper);
+      font-weight: bold;
+    }
+
+    /* Payment Pills */
+    .payment-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .pill {
+      background-color: #242424;
+      border: 1px solid var(--tan);
+      color: var(--tan);
+      padding: 0.5rem 1.1rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Team Headshots */
+    .team-photo-wrapper {
+      width: 110px;
+      height: 110px;
+      margin-bottom: 1.1rem;
+      position: relative;
+    }
+
+    .team-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--copper);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      display: block;
+    }
+
+    .team-avatar-fallback {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--copper), #6d3a1e);
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 800;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--tan);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    .role-title {
+      color: var(--copper);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    /* Forms */
+    .form-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2.25rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: var(--tan);
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #111;
+      border: 1px solid #3a3a3a;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--copper);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0a0a0a;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: var(--tan);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#top" class="brand-name">L.A.C. <span>Academy</span></a>
+      <nav>
+        <ul>
+          <li><a href="#programs">4-Week Program</a></li>
+          <li><a href="#payments">Tuition &amp; Payments</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#enroll" class="nav-cta">Sign Up Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="top" class="hero">
+    <img src="logo.png" alt="Lyfe Altering Career - L.A.C. Academy Logo" class="hero-logo">
+    <h1>Dual Education. Job Ready in 4 Weeks.</h1>
+    <p>Earn your <strong>CDL Class A (Manual)</strong> alongside <strong>Heavy Equipment Certification</strong> at a reasonable, low price—complete with on-site DOT physicals, drug testing, and dedicated job placement support.</p>
+    <div class="btn-group">
+      <a href="#enroll" class="btn btn-primary">Easy Sign Up</a>
+      <a href="#donate" class="btn btn-outline">Support &amp; Donate</a>
+    </div>
+  </section>
+
+  <!-- 4-Week Dual Program Section -->
+  <section id="programs" class="container">
+    <h2 class="section-title">4-Week Dual Education Program</h2>
+    <p class="section-subtitle">Get trained, certified, and job-ready in just four weeks. We remove the barriers between you and a high-paying career.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <span class="badge">Track 1 &bull; 4 Weeks</span>
+        <h3>CDL Class A (Manual Transmission)</h3>
+        <p>Training on a manual transmission ensures you graduate without an automatic restriction—opening the door to higher-paying oilfield, construction, and heavy-haul positions.</p>
+        <ul class="check-list">
+          <li>Manual shifting &amp; double-clutch mastery</li>
+          <li>Pre-trip, en-route, and post-trip vehicle inspections</li>
