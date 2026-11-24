@@ -2,67 +2,129 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Lyfe Altering Career Academy offers CDL Class A manual and heavy equipment training.">
-  <title>Lyfe Altering Career | L.A.C. Academy</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Lyfe Altering Career Academy — under construction. Coming soon.">
+  <title>Under Construction | Lyfe Altering Career Academy</title>
+  <style>
+    :root {
+      --cream: #f5efe5;
+      --copper: #c47245;
+      --gold: #c8a27a;
+      --ink: #111111;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 50% 35%, rgba(196, 114, 69, 0.18), transparent 28rem),
+        linear-gradient(135deg, #0b0b0b 0%, #171311 55%, #0b0b0b 100%);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle, black 15%, transparent 75%);
+    }
+
+    main {
+      position: relative;
+      width: min(90%, 760px);
+      text-align: center;
+      padding: 3.5rem 2rem;
+    }
+
+    .logo {
+      width: min(180px, 42vw);
+      height: auto;
+      display: block;
+      margin: 0 auto 2rem;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, .35));
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--gold);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(3rem, 10vw, 6.5rem);
+      line-height: .9;
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+    }
+
+    .accent {
+      display: block;
+      margin-top: .22em;
+      color: var(--copper);
+      font-size: .42em;
+      letter-spacing: .32em;
+      line-height: 1;
+    }
+
+    .rule {
+      width: 96px;
+      height: 3px;
+      margin: 2.25rem auto 1.25rem;
+      border: 0;
+      background: var(--copper);
+    }
+
+    p {
+      margin: 0;
+      color: rgba(245, 239, 229, .72);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(.95rem, 2.5vw, 1.12rem);
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 480px) {
+      main { padding-inline: 1.25rem; }
+      .logo { margin-bottom: 1.5rem; }
+      h1 { font-size: clamp(2.7rem, 16vw, 4.25rem); }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      main { animation: arrive .8s ease-out both; }
+      @keyframes arrive {
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="nav-container">
-    <a href="index.html" class="brand-name">L.A.C. <span>Academy</span></a>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="programs.html">4-Week Program</a></li>
-        <li><a href="payments.html">Tuition &amp; Payments</a></li>
-        <li><a href="team.html">Our Team</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="enroll.html" class="nav-cta">Sign Up</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<main>
-  <section class="hero">
-    <img src="logo.png" alt="Lyfe Altering Career - L.A.C. Academy Logo" class="hero-logo">
-    <h1>Dual Education. Job Ready in 4 Weeks.</h1>
-    <p>Earn your <strong>CDL Class A (Manual)</strong> alongside <strong>Heavy Equipment Certification</strong> at a reasonable, low price—complete with on-site DOT physicals, drug testing, and dedicated job placement support.</p>
-    <div class="btn-group">
-      <a href="enroll.html" class="btn btn-primary">Easy Sign Up</a>
-      <a href="donate.html" class="btn btn-outline">Support &amp; Donate</a>
-    </div>
-  </section>
-  <section class="container">
-    <h2 class="section-title">Start Your Career Journey</h2>
-    <p class="section-subtitle">Explore the academy, training program, tuition information, team, and ways to support our students.</p>
-    <div class="grid-3">
-      <article class="card">
-        <h2>4-Week Program</h2>
-        <p>Learn about the dual CDL Class A and heavy equipment education program.</p>
-        <a class="btn btn-outline" href="programs.html">View Program</a>
-      </article>
-      <article class="card">
-        <h2>Tuition &amp; Payments</h2>
-        <p>Please contact us for tuition specials.</p>
-        <a class="btn btn-outline" href="payments.html">Tuition Details</a>
-      </article>
-      <article class="card">
-        <h2>Our Team</h2>
-        <p>Meet the instructors and staff supporting student success.</p>
-        <a class="btn btn-outline" href="team.html">Meet the Team</a>
-      </article>
-      <article class="card">
-        <h2>Academy Gallery</h2>
-        <p>See our CDL and heavy equipment training in action.</p>
-        <a class="btn btn-outline" href="gallery.html">View Gallery</a>
-      </article>
-    </div>
-  </section>
-</main>
-<footer>
-  <p><strong>Lyfe Altering Career (L.A.C. Academy)</strong> &bull; lyfealteringcareer.com</p>
-  <p>CDL Class A Manual &amp; Heavy Equipment Certification</p>
-</footer>
+  <main>
+    <img class="logo" src="logo.png" alt="Lyfe Altering Career Academy">
+    <p class="eyebrow">Lyfe Altering Career Academy</p>
+    <h1>
+      Under
+      <span class="accent">Construction</span>
+    </h1>
+    <hr class="rule">
+    <p>COMING SOON</p>
+  </main>
 </body>
 </html>
